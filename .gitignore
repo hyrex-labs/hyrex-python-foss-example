@@ -16,11 +16,6 @@ dist/
 build/
 *.egg
 
-# Environment
-.env
-.env.local
-.env.*.local
-
 # IDEs
 .vscode/
 .idea/
