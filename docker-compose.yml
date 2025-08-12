@@ -29,8 +29,28 @@ services:
       postgres:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgresql://hyrex_user:hyrex_password@postgres:5432/hyrex_db
+      HYREX_DATABASE_URL: postgresql://hyrex_user:hyrex_password@postgres:5432/hyrex_db
       PYTHONUNBUFFERED: 1
+    volumes:
+      - ./:/app
+    networks:
+      - hyrex_network
+    restart: unless-stopped
+
+  studio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hyrex_studio
+    command: python -m hyrex studio
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      HYREX_DATABASE_URL: postgresql://hyrex_user:hyrex_password@postgres:5432/hyrex_db
+      PYTHONUNBUFFERED: 1
+    ports:
+      - "1337:1337"
     volumes:
       - ./:/app
     networks:
