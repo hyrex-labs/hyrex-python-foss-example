@@ -6,7 +6,7 @@ click==8.1.7
 colorama==0.4.6
 croniter==6.0.0
 grpcio==1.74.0
-hyrex==0.10.11
+hyrex==0.10.13
 jmespath==1.0.1
 markdown-it-py==4.0.0
 mdurl==0.1.2
