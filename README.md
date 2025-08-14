@@ -24,7 +24,7 @@ A Hyrex application with PostgreSQL database running in Docker containers.
 3. The application will be available with:
    - PostgreSQL database on `localhost:5432`
    - Hyrex worker running and connected to the database
-   - Hyrex Studio UI on `http://localhost:7020`
+   - Hyrex Studio UI on `https//local.hyrex.studio`
 
 ## Configuration
 
